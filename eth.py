@@ -23,7 +23,11 @@ class Account:
         self.acc_list.append(wallet_hash)
         self.write()
         self.read()
-                
+
+    def clear(self):
+        with open(self.file_name, 'w') as writer: pass
+
+
 class Log:
     
     def __init__(self):
@@ -53,6 +57,9 @@ class Log:
     def out(self):
         print(self.logs)
 
+    def clear(self):
+        with open(self.file_name, 'w') as writer:
+            writer.write("{'transactions':[]}")
 
 class Watcher:
     
